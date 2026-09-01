@@ -61,7 +61,8 @@ const PROJECTS = [
     meta: "Python · Apr 2026",
     out: "An interactive dashboard for one race at a time. Lap times, sector splits and tyre compounds pulled from FastF1, cached locally, with pit and opening laps filtered out so the plots stay readable.",
     tags: ["Python", "FastF1", "dashboard"],
-    slot: "lap time dashboard"
+    slot: "lap time dashboard",
+    tape: true
   },
   {
     title: "Predicting-All-NBA",
@@ -89,7 +90,8 @@ const PROJECTS = [
     meta: "Notebook · Mar 2026",
     out: "A 3D animated shot chart of Jimmy Butler's 56-point playoff game. Legacy NBA coordinates converted into real court geometry, then animated in true sequence under a live scoreboard.",
     tags: ["Notebook", "viz", "NBA"],
-    slot: "demo.gif"
+    slot: "demo.gif",
+    tape: true
   },
   {
     title: "Cafe-Sales-EDA",
@@ -98,7 +100,8 @@ const PROJECTS = [
     meta: "Notebook · Jan 2026",
     out: "Exploratory analysis of a deliberately dirty cafe POS dataset. Missing values and inconsistent formats first, then sales volume, top items and time-of-day trends once it was readable.",
     tags: ["Notebook", "pandas", "EDA"],
-    slot: "sales over time"
+    slot: "sales over time",
+    tape: true
   },
   {
     title: "Credit-Card-Default-Classification",
@@ -387,6 +390,9 @@ function renderCells() {
         >${isRan ? "[1]" : "▶"}</button>
         <div class="cell__glyph"></div>
         <pre class="cell__code">${escapeHtml(p.code)}</pre>
+        ${p.tape ? `<span class="cell__tape" title="Part of the 2026 Monthly Series"
+          ><i class="cell__tape-dot"></i><span class="cell__tape-label"
+          >2026 <span class="cell__tape-long">Monthly </span>Series</span></span>` : ""}
         <span class="cell__meta">${p.meta}</span>
       </div>`;
 

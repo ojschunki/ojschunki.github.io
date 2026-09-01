@@ -265,6 +265,23 @@ a:hover { color: var(--hover); }
   flex: none; align-self: center; padding: 0 22px;
   font: 400 11px var(--mono); color: rgba(0, 0, 0, .35); white-space: nowrap;
 }
+
+/* 2026 Monthly Series — the twelve-projects-in-twelve-months run.
+   Only on repos whose own README claims a month. */
+.cell__tape {
+  flex: none; align-self: center;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 10px; border-radius: 3px; white-space: nowrap;
+  font: 400 10.5px var(--mono); letter-spacing: .2px;
+  color: #8a5a30; background: #fbe8d5;
+  border: 1px solid rgba(238, 176, 124, .6);
+}
+.cell__tape-dot {
+  width: 5px; height: 5px; border-radius: 1px;
+  background: var(--accent); flex: none;
+}
+/* One flex item, or the container's gap lands between each word. */
+.cell__tape-label { white-space: nowrap; }
 .cell__out {
   display: flex; gap: 24px;
   padding: 26px 26px 28px 78px;
@@ -386,7 +403,12 @@ a:hover { color: var(--hover); }
   .featured__body { padding: 28px 22px; }
   .cell__head { flex-wrap: wrap; }
   .cell__code { flex-basis: 100%; order: 3; border-top: 1px solid var(--rule-soft); }
-  .cell__meta { padding: 0 18px 0 auto; margin-left: auto; }
+  .cell__meta { padding: 0 18px; margin-left: auto; }
+  /* Pill + meta won't share a row at this width, so stack them
+     right-aligned rather than letting the pill strand on the left.
+     "Monthly" drops out here, leaving "2026 Series". */
+  .cell__tape { margin-left: auto; margin-right: 18px; }
+  .cell__tape-long { display: none; }
   .cell__out { flex-direction: column; padding: 22px; }
   .cell__slot { width: 100%; }
   .contact__title { font-size: 30px; letter-spacing: -1.2px; }
