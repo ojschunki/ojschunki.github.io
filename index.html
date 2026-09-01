@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jorge Nunez — Computer Science, ML</title>
+<meta name="description" content="MS Computer Science, graduate research assistant at VARLAB. A notebook of side projects — puzzles, box scores, race telemetry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ── nav ─────────────────────────────────────────────── -->
+  <header class="nav">
+    <span class="nav__file">jorge-nunez.ipynb</span>
+    <nav class="nav__links">
+      <a href="#work" class="is-current">// work</a>
+      <a href="#about">// about</a>
+      <a href="#resume">// résumé</a>
+      <a href="#contact">// contact</a>
+    </nav>
+    <span class="nav__status"><i class="dot"></i>kernel ready</span>
+  </header>
+
+  <!-- ── hero ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__text">
+      <div class="tag">[markdown]</div>
+      <h1 class="hero__name"><span id="typed"></span><span class="caret"></span></h1>
+      <p class="hero__blurb">
+        I teach computers to notice things — puzzles, box scores, race telemetry.
+        Mostly at night, mostly with a coffee going cold next to me. Run a cell to
+        see what came out of it.
+      </p>
+      <div class="chips" id="hero-chips"></div>
+    </div>
+    <div class="duckfield" id="duckfield"></div>
+  </section>
+
+  <!-- ── marquee ─────────────────────────────────────────── -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span class="marquee__run">jorge nunez &nbsp;//&nbsp; puzzles &nbsp;//&nbsp; box scores &nbsp;//&nbsp; race telemetry &nbsp;//&nbsp; notebooks &nbsp;//&nbsp; small tools &nbsp;//&nbsp;&nbsp;</span>
+      <span class="marquee__run" aria-hidden="true">jorge nunez &nbsp;//&nbsp; puzzles &nbsp;//&nbsp; box scores &nbsp;//&nbsp; race telemetry &nbsp;//&nbsp; notebooks &nbsp;//&nbsp; small tools &nbsp;//&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ── featured ────────────────────────────────────────── -->
+  <section id="work" class="section">
+    <div class="prompt"><span class="prompt__in">In [1]:</span><span class="prompt__code">featured.show()</span></div>
+    <div class="featured">
+      <!-- Both PNGs are the real pair from the Queens repo:
+           images/puzzles/08_20_26.png + images/solutions/08_20_26_overlay.png -->
+      <div class="featured__shot shotpair">
+        <figure>
+          <img src="images/queens-puzzle.png" width="253" height="276"
+               alt="A 9×9 LinkedIn Queens board, nine coloured regions, unsolved.">
+          <figcaption>in — screenshot</figcaption>
+        </figure>
+        <span class="shotpair__arrow" aria-hidden="true">→</span>
+        <figure>
+          <img src="images/queens-solved.png" width="253" height="276"
+               alt="The same board with nine crowns placed, one per row, column and colour region.">
+          <figcaption>out — solved</figcaption>
+        </figure>
+      </div>
+      <div class="featured__body">
+        <span class="label label--violet">// featured</span>
+        <h2 class="featured__title">Queens<span class="dim"> solver</span></h2>
+        <p class="featured__desc">
+          Solve the LinkedIn Queens puzzle from a screenshot. Screenshot in,
+          solution out. The solver is the easy half — it's a small
+          constraint-satisfaction problem and backtracking clears any real board
+          instantly. The interesting half was reading the board off the image
+          without a model: crop, sample each cell's colour, cluster into regions.
+        </p>
+        <div class="stats">
+          <div><div class="stats__n">9×9</div><div class="stats__k">example board</div></div>
+          <div><div class="stats__n">&lt;1ms</div><div class="stats__k">solve time</div></div>
+          <div><div class="stats__n">0</div><div class="stats__k">ML models</div></div>
+        </div>
+        <div class="linkrow">
+          <a href="https://github.com/ojschunki/Queens" target="_blank" rel="noopener"
+             class="link--underline">view repo ↗</a>
+          <a href="https://github.com/ojschunki/Queens#the-puzzle" target="_blank"
+             rel="noopener" class="link--muted">read notes ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── the pile ────────────────────────────────────────── -->
+  <section class="section">
+    <h2 class="h2">The <span class="dim">pile</span></h2>
+    <div class="filterbar">
+      <span class="filterbar__label">filter by</span>
+      <div class="filterbar__set" id="filters"></div>
+    </div>
+  </section>
+
+  <div class="cells" id="cells"></div>
+
+  <!-- ── about ───────────────────────────────────────────── -->
+  <section id="about" class="section about">
+    <div>
+      <h2 class="h2">A bit <span class="dim">about me</span></h2>
+      <!-- Written from your GitHub profile README — your voice, my edit.
+           Worth a pass in your own words before this goes public. -->
+      <p class="prose">
+        I teach computers to notice things — puzzles, box scores, race telemetry.
+        Most of it happens at night: a LinkedIn puzzle I couldn't stop thinking
+        about, a playoff game I wanted to see the shape of, a race worth pulling
+        apart lap by lap.
+      </p>
+      <p class="prose">
+        This year the plan was twelve projects, one a month. Three are officially
+        tagged into the tape; a few more happened without asking permission to be
+        part of it. Right now I'm on agentic RAG and reinforcement learning, which
+        mostly means a snake is slowly getting better at a game I keep losing.
+      </p>
+    </div>
+    <div>
+      <div class="drop drop--figure"><span>drop the illustration</span></div>
+      <div class="figcap">fig 2.</div>
+    </div>
+    <aside class="kernel">
+      <div class="kernel__head"><span>kernel</span><span class="kernel__on">● running</span></div>
+      <div id="kernel-rows"></div>
+      <div class="kernel__cap">commits, last 40 weeks</div>
+      <div class="heat" id="heat"></div>
+    </aside>
+  </section>
+
+  <!-- ── résumé ──────────────────────────────────────────── -->
+  <section id="resume" class="section">
+    <h2 class="h2">Where I've <span class="dim">been</span></h2>
+    <div class="timeline" id="timeline"></div>
+    <!-- Deliberately not wired up. Your résumé PDF carries your phone
+         number and home city — see the note before you drop it in here. -->
+    <div class="linkrow linkrow--top">
+      <a href="#resume" class="link--underline">résumé.pdf ↓</a>
+    </div>
+  </section>
+
+  <!-- ── contact ─────────────────────────────────────────── -->
+  <footer id="contact" class="contact">
+    <span class="label label--peach">// contact</span>
+    <h2 class="contact__title">Open to weekend collaborations and interesting datasets</h2>
+    <p class="contact__blurb">
+      If you have a half-formed idea that needs a model behind it, send it over.
+      Email is fastest.
+    </p>
+    <!-- Email, GitHub and LinkedIn are the three links your résumé already
+         carries. Your phone number is on that résumé too and is deliberately
+         NOT here — see the note before you add a résumé download. -->
+    <div class="contact__links">
+      <a href="mailto:jorge.nunez0319@gmail.com" class="c-peach">jorge.nunez0319@gmail.com</a>
+      <a href="https://github.com/ojschunki" target="_blank" rel="noopener" class="c-mint">github ↗</a>
+      <a href="https://www.linkedin.com/in/oj-nunez/" target="_blank" rel="noopener" class="c-lilac">linkedin ↗</a>
+      <a href="#resume" class="c-sky">résumé.pdf ↓</a>
+    </div>
+    <div class="contact__foot">In [<span id="ran-count">1</span>]: end of notebook</div>
+  </footer>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>
