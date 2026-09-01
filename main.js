@@ -37,25 +37,6 @@ const PROJECTS = [
     img: { src: "images/queens-solved.png", alt: "A solved 9×9 Queens board with nine crowns placed." }
   },
   {
-    // Not on GitHub — from the résumé. No repo link.
-    title: "Trust and Size LLMs",
-    cat: "research",
-    code: "ipd.run(model_sizes, prompt_styles)",
-    meta: "Research · ongoing",
-    out: "Does a bigger model cooperate more? Experiments in the iterated prisoner's dilemma across GPT models of different sizes, quantifying cooperation, defection and trust. Two twists: whether phrasing the setup as real life rather than a game changes the behaviour, and whether cooperating in the IPD predicts trust in the investment game. Pending review at IVA26.",
-    tags: ["Python", "LLMs", "game theory"],
-    slot: "cooperation vs model size"
-  },
-  {
-    title: "Agentic-RAG",
-    cat: "models",
-    code: "from agentic_rag import agent\nagent.ask(\"what are the genai principles?\")",
-    meta: "Python · Jun 2026",
-    out: "A retrieval-augmented agent answering questions over a GenAI principles PDF. One file, agentic_rag.py, holding the whole retrieve-then-reason loop.",
-    tags: ["Python", "RAG", "LLM"],
-    slot: "retrieval trace"
-  },
-  {
     title: "Snake-RL",
     cat: "models",
     code: "$ python train.py",
@@ -72,16 +53,6 @@ const PROJECTS = [
     out: "Three files, no framework, counting down to graduation. index.html, script.js, style.css and nothing else.",
     tags: ["JavaScript", "tiny"],
     slot: "countdown page"
-  },
-  {
-    // Not on GitHub — from the résumé. No repo link.
-    title: "VR4STRESS",
-    cat: "research",
-    code: "scene.load(\"forest_trail\")",
-    meta: "Unity · Apr 2026",
-    out: "A forest scene built to mimic a hiking trail, with a handful of activities to interact with along the way. Runs on a headset or flat on a desktop. Built in Unity at VARLAB.",
-    tags: ["Unity", "C++", "VR"],
-    slot: "forest trail scene"
   },
   {
     title: "F1-Race-Analytics",
@@ -151,7 +122,7 @@ const PROJECTS = [
 ];
 
 // Projects that live only on the résumé, not in a repo.
-const NO_REPO = new Set(["Trust and Size LLMs", "VR4STRESS", "CNN-on-Doodles"]);
+const NO_REPO = new Set(["CNN-on-Doodles"]);
 
 /* From your résumé (the applied-ML version). One real job, so the
    section covers the degrees too — hence "Where I've been" rather
@@ -162,8 +133,8 @@ const TIMELINE = [
     org: "VARLAB",
     years: "Jun 2025 — now",
     place: "Orlando, FL",
-    desc: "Virtual environment simulations in Unity, built to measure performance and feed research outcomes. Data pipelines on GCP with Dataflow and Python to collect and process survey data, and prototype models in PyTorch and TensorFlow for predicting how an environment behaves.",
-    chips: ["Unity", "Python", "PyTorch", "TensorFlow", "GCP"]
+    desc: "Virtual environment simulations in Unity, built to measure performance and feed research outcomes.",
+    chips: ["Unity", "C#", "XR"]
   },
   {
     role: "MS, Computer Science",
@@ -224,8 +195,6 @@ const GLYPH_FALLBACK = ["..XX....", "..XX.XX.", "X.XX.XX.", "X.XXXXX.", "XXXXXX.
 const GLYPHS = {
   // crown
   "Queens":                           ["X..XX..X", "X.XXXX.X", "XXXXXXXX", "XXXXXXXX", ".XXXXXX.", ".XXXXXX.", "XXXXXXXX", "........"],
-  // document with a magnifier tail
-  "Agentic-RAG":                      ["XXXXXXX.", "X.....X.", "X.XXX.X.", "X.....X.", "X.XXX.X.", "X.....X.", "XXXXXXX.", "...XX.XX"],
   // serpentine
   "Snake-RL":                         [".XXXXX..", ".....X..", ".XXXXX..", ".X......", ".XXXXX..", ".....X..", ".XXXXXX.", "........"],
   // graduation cap
@@ -242,10 +211,6 @@ const GLYPHS = {
   "Cafe-Sales-EDA":                   ["..X.X...", "...X.X..", "........", "XXXXXX..", "X....XXX", "X....X.X", "X....XX.", ".XXXX..."],
   // card with a stripe
   "Credit-Card-Default-Classification": ["........", "XXXXXXXX", "X......X", "XXXXXXXX", "X......X", "X.XX...X", "X......X", "XXXXXXXX"],
-  // two players across a table
-  "Trust and Size LLMs":              [".XX..XX.", "X..XX..X", "X..XX..X", ".XX..XX.", "........", ".XXXXXX.", "X......X", ".XXXXXX."],
-  // headset
-  "VR4STRESS":                        ["........", "XXXXXXXX", "XXX..XXX", "X.X..X.X", "XXX..XXX", "XXXXXXXX", ".XX..XX.", "........"],
   // pencil stroke
   "CNN-on-Doodles":                   ["......XX", ".....XXX", "....XXX.", "...XXX..", "..XXX...", ".XXX....", "XXX.....", "XX......"]
 };
@@ -388,8 +353,7 @@ const CATS = [
   { key: "all", label: "all" },
   { key: "models", label: "/ models" },
   { key: "notebooks", label: "/ notebooks" },
-  { key: "tools", label: "/ tools" },
-  { key: "research", label: "/ research" }
+  { key: "tools", label: "/ tools" }
 ];
 
 const ran = { "Queens": true };
