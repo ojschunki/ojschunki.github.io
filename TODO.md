@@ -46,7 +46,18 @@ cell renders it instead of the placeholder. See the `Queens` entry.
   kernel panel says `the 2026 tape` and the about copy says "tagged into the
   tape". Pick one.
 - `<title>` is `jn.py`, so search engines show that rather than a name.
-- `main.js` / `styles.css` have no cache-busting, and GitHub Pages serves them
-  with `max-age=600`. After a deploy, a hard refresh is needed to see changes.
-  Fix is `styles.css?v=N`, bumped per deploy.
 - The about section still has one `drop the illustration` placeholder (fig 2.).
+
+## Deploying
+
+`styles.css` and `main.js` are stamped with a content hash (`?v=698c671f`) so a
+browser can't pair a cached stylesheet with a fresh script. **Run this whenever
+either file changed, before committing:**
+
+```
+python bump-assets.py
+```
+
+It rewrites the two `href`/`src` stamps in `index.html` from the files' own
+bytes, so running it when nothing changed is a no-op. Then commit and push;
+GitHub Pages rebuilds in about a minute.
