@@ -285,7 +285,8 @@ el("hero-chips").innerHTML = CHIPS.map((t) => `<span class="chip">${t}</span>`).
     const label = document.createElement("div");
     label.className = "duck__label";
     label.textContent = d.label;
-    label.style.transform = `scaleX(${d.flip ? -1 : 1})`;
+    // scaleX un-mirrors the text inside a flipped duck's wrapper.
+    label.style.transform = `translateX(-50%) scaleX(${d.flip ? -1 : 1})`;
     wrap.appendChild(label);
 
     const duck = { cfg: d, i, depth, wrap, poses, label, hover: false };

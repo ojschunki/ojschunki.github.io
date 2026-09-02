@@ -127,10 +127,13 @@ a:hover { color: var(--hover); }
 .duck__pose { display: grid; }
 .duck__pose[hidden] { display: none; }
 .duck__px { width: 100%; height: 100%; }
+/* Centred over the sprite. left:50% puts the box's left edge at the duck's
+   centre; the translateX(-50%) in main.js pulls it back by half its own
+   width. Origin must stay centre so the flip un-mirror doesn't shift it. */
 .duck__label {
-  position: absolute; left: 0; top: -22px; white-space: nowrap;
+  position: absolute; left: 50%; top: -22px; white-space: nowrap;
   font: 400 11px var(--mono); color: rgba(0, 0, 0, .5);
-  opacity: 0; transform-origin: left center; transition: opacity .25s;
+  opacity: 0; transform-origin: center center; transition: opacity .25s;
   pointer-events: none;
 }
 
@@ -336,6 +339,9 @@ a:hover { color: var(--hover); }
 
 /* ── timeline ────────────────────────────────────────────── */
 .timeline { margin-top: 26px; }
+/* Each .job draws its own top rule, so the list needs a closing one.
+   The résumé link row used to supply it. */
+.timeline--closed { border-bottom: 1px solid var(--rule-hard); }
 .job {
   display: grid; grid-template-columns: 64px 1fr 150px; gap: 24px;
   padding: 26px 0; border-top: 1px solid var(--rule-hard); align-items: start;
